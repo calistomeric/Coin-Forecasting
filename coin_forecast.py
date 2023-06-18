@@ -11,9 +11,9 @@ Bearer_Token = 'AAAAAAAAAAAAAAAAAAAAAJJycQEAAAAAuumt%2FjnE7YLpLSul2LoqabbNxTQ%3D
 Access_Token =  '1489332332498726917-dZ9eyJFy7lqQDNkjIA5mEoNUjyNu7t'
 Access_Token_Secret =  'm6w9jehIf5k4qWajRD6YWcb8NDqUylOgJ6xTmLAeH7cz2'
 
-auth = tweepy.OAuthHandler(API_Key, API_Key_Secret)
-auth.set_access_token(Access_Token, Access_Token_Secret)
-api = tweepy.API(auth, wait_on_rate_limit=True)
+# auth = tweepy.OAuthHandler(API_Key, API_Key_Secret)
+# auth.set_access_token(Access_Token, Access_Token_Secret)
+# api = tweepy.API(auth, wait_on_rate_limit=True)
 
 
 # "mongodb+srv://calistus:calistus@cluster0.m97pu3i.mongodb.net/?retryWrites=true&w=majority"
