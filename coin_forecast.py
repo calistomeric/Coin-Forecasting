@@ -21,7 +21,7 @@ api = tweepy.API(auth, wait_on_rate_limit=True)
 mongo_client = pymongo.MongoClient("mongodb+srv://calistus:calistus@cluster0.m97pu3i.mongodb.net/?retryWrites=true&w=majority")
 client = tweepy.Client(bearer_token=Bearer_Token, wait_on_rate_limit=True)
 # db = mongo_client['DBdisertatie']
-db = mongo_client['Store Tweet']
+db = mongo_client['StoreTweet']
 
 
 
