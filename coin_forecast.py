@@ -24,7 +24,7 @@ client = tweepy.Client(bearer_token=Bearer_Token, wait_on_rate_limit=True)
 # db = mongo_client['StoreTweet']
 
 def init_connection():
-    return MongoClient("mongodb+srv://st.secrets.username:st.secrets.password@st.secrets.clustername.m97pu3i.mongodb.net/?retryWrites=true&w=majority")
+    return pymongo.MongoClient("mongodb+srv://st.secrets.username:st.secrets.password@st.secrets.clustername.m97pu3i.mongodb.net/?retryWrites=true&w=majority")
 
 mongo_client = init_connection()
 db = mongo_client['StoreTweet']
