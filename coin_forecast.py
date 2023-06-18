@@ -4,6 +4,7 @@ import tweepy
 import pymongo
 from textblob import TextBlob
 import re
+import time
 
 API_Key =  'IPIMavVwaN13mt4s6vZwXnXWm'
 API_Key_Secret = 'mx8GDMlpBAYA8Le0uWE59hdcvnPTfqYjrJqRZ9jLz4RyBCHZ9c'
@@ -34,20 +35,22 @@ def get_tweet(start, end, search_term, limit):
                             start_time = start, 
                             end_time = end, max_results=100).flatten(limit=limit)
 
-            
-    for i, tweet in enumerate(tweets):
-        if i >= limit:
-            break
-        tweet_dict = {
-            'tweet_date':tweet.created_at,
-            'language': tweet.lang,
-            'id':tweet.id,
-            'tweet':tweet.text, 
-            'reply_count':list(tweet.public_metrics.values())[1],
-            'retweet_count':list(tweet.public_metrics.values())[0],
-            'like_count':list(tweet.public_metrics.values())[2]
-        }
-        store_tweets.append(tweet_dict)
+    try:      
+        for i, tweet in enumerate(tweets):
+            if i >= limit:
+                break
+            tweet_dict = {
+                'tweet_date':tweet.created_at,
+                'language': tweet.lang,
+                'id':tweet.id,
+                'tweet':tweet.text, 
+                'reply_count':list(tweet.public_metrics.values())[1],
+                'retweet_count':list(tweet.public_metrics.values())[0],
+                'like_count':list(tweet.public_metrics.values())[2]
+            }
+            store_tweets.append(tweet_dict)
+    except tweepy.RateLimitError:
+        time.sleep(901)
     data = pd.DataFrame(store_tweets)
     return data
 
