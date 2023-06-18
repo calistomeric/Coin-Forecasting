@@ -4,7 +4,6 @@ import tweepy
 import pymongo
 from textblob import TextBlob
 import re
-import time
 
 API_Key =  'IPIMavVwaN13mt4s6vZwXnXWm'
 API_Key_Secret = 'mx8GDMlpBAYA8Le0uWE59hdcvnPTfqYjrJqRZ9jLz4RyBCHZ9c'
@@ -48,7 +47,6 @@ def get_tweet(start, end, search_term, limit):
             'retweet_count':list(tweet.public_metrics.values())[0],
             'like_count':list(tweet.public_metrics.values())[2]
         }
-        time.sleep(1)
         store_tweets.append(tweet_dict)
     data = pd.DataFrame(store_tweets)
     return data
