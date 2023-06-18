@@ -17,7 +17,7 @@ api = tweepy.API(auth, wait_on_rate_limit=True)
 
 
 # "mongodb+srv://calistus:calistus@cluster0.m97pu3i.mongodb.net/?retryWrites=true&w=majority"
-mongo_client = pymongo.MongoClient("mongodb+srv://burlacuemilia07:root@dbdisertatie.syso6he.mongodb.net/?retryrites=true&w=majority")
+mongo_client = pymongo.MongoClient("mongodb+srv://burlacuemilia07:root@dbdisertatie.syso6he.mongodb.net/?retryWrites=true&w=majority")
 # mongo_client = pymongo.MongoClient("mongodb+srv://calistus:calistus@cluster0.m97pu3i.mongodb.net/?retryWrites=true&w=majority")
 client = tweepy.Client(bearer_token=Bearer_Token, wait_on_rate_limit=True)
 db = mongo_client['DBdisertatie']
