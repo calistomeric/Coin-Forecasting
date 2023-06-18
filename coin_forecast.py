@@ -48,7 +48,7 @@ def get_tweet(start, end, search_term, limit):
             'retweet_count':list(tweet.public_metrics.values())[0],
             'like_count':list(tweet.public_metrics.values())[2]
         }
-        time.sleep(3)
+        time.sleep(1)
         store_tweets.append(tweet_dict)
     data = pd.DataFrame(store_tweets)
     return data
