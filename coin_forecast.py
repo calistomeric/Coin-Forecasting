@@ -34,23 +34,21 @@ def get_tweet(start, end, search_term, limit):
                             tweet_fields= ['created_at', 'lang', 'id', 'text', 'public_metrics'], 
                             start_time = start, 
                             end_time = end, max_results=100).flatten(limit=limit)
-
-    try:      
-        for i, tweet in enumerate(tweets):
-            if i >= limit:
-                break
-            tweet_dict = {
-                'tweet_date':tweet.created_at,
-                'language': tweet.lang,
-                'id':tweet.id,
-                'tweet':tweet.text, 
-                'reply_count':list(tweet.public_metrics.values())[1],
-                'retweet_count':list(tweet.public_metrics.values())[0],
-                'like_count':list(tweet.public_metrics.values())[2]
-            }
-            store_tweets.append(tweet_dict)
-    except tweepy.RateLimitError:
-        time.sleep(901)
+      
+    for i, tweet in enumerate(tweets):
+        if i >= limit:
+            break
+        tweet_dict = {
+            'tweet_date':tweet.created_at,
+            'language': tweet.lang,
+            'id':tweet.id,
+            'tweet':tweet.text, 
+            'reply_count':list(tweet.public_metrics.values())[1],
+            'retweet_count':list(tweet.public_metrics.values())[0],
+            'like_count':list(tweet.public_metrics.values())[2]
+        }
+        store_tweets.append(tweet_dict)
+        time.sleep(1)
     data = pd.DataFrame(store_tweets)
     return data
 
