@@ -11,5 +11,5 @@ The app contains the following inputs:
 2. Click on **Scrape Tweet** button in order to start scraping the tweets. As the tweets are scraped they will be displayed on the interface.
 3. Click on **Upload to MongoDB** button in order to upload the scraped tweets to MongoDB.
 4. Click on **Predict** button in order to display the prediction. Buy is displayed if positive sentiments is greater than negative sentiments while sell is displayed if negative sentiments is greater than positive sentiments.
-![Screenshot (5)](https://github.com/calistomeric/Coin-Forecasting/assets/99477055/138ad265-110e-4274-8fe9-31bfadedec0c)
-[Click here to use the app](https://calistomeric-coin-forecasting-coin-forecast-1g63bn.streamlit.app/)
+[Click here to use the app](https://calistomeric-coin-forecasting-coin-forecast-1g63bn.streamlit.app/)![coin_forecast](https://github.com/calistomeric/Coin-Forecasting/assets/99477055/ffebf965-0d20-4f0a-b046-439d5d0d56e4)
+
